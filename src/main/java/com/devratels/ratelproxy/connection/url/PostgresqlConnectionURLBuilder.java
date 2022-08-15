@@ -8,6 +8,7 @@ public class PostgresqlConnectionURLBuilder implements ConnectionURLBuilder{
         StringBuilder stringBuilder = new StringBuilder("jdbc:postgresql://");
         stringBuilder.append(config.getHost());
         if (config.getPort() != null) stringBuilder.append(":").append(config.getPort());
+        if (config.getDatabase() != null) stringBuilder.append("/").append(config.getDatabase());
         return stringBuilder.toString();
     }
 }
